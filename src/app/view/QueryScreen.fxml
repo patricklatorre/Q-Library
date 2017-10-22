@@ -26,42 +26,42 @@
                   </ImageView>
                </children>
             </Pane>
-            <JFXButton fx:id="q1btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Books from publisher" textFill="WHITE">
+            <JFXButton fx:id="q1btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Publisher's Books" textFill="WHITE">
                <font>
                   <Font name="Roboto Regular" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="q2btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Books between dates" textFill="WHITE">
+            <JFXButton fx:id="q2btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="What's Hot" textFill="WHITE">
                <font>
                   <Font name="Roboto Regular" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="q3btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Books from an author" textFill="WHITE">
+            <JFXButton fx:id="q3btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Author's Books" textFill="WHITE">
                <font>
                   <Font name="Roboto Regular" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="q4btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Unborrowed books" textFill="WHITE">
+            <JFXButton fx:id="q4btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Untouched Books" textFill="WHITE">
                <font>
                   <Font name="Roboto Regular" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="q5btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Most active borrower" textFill="WHITE">
+            <JFXButton fx:id="q5btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Top Borrower" textFill="WHITE">
                <font>
                   <Font name="Roboto Regular" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="q6btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="----" textFill="WHITE">
+            <JFXButton fx:id="q6btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Another One" textFill="WHITE">
                <font>
                   <Font name="Roboto Regular" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="q7btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Most borrowed in branch" textFill="WHITE">
+            <JFXButton fx:id="q7btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Popular Books" textFill="WHITE">
                <font>
                   <Font name="Roboto Regular" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="q8btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Unborrowed books" textFill="WHITE">
+            <JFXButton fx:id="q8btn" opacity="0.7" prefHeight="44.0" prefWidth="268.0" style="-fx-background-color: #26A69A;" text="Another One" textFill="WHITE">
                <font>
                   <Font name="Roboto Regular" size="14.0" />
                </font>
