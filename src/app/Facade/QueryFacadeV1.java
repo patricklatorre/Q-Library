@@ -1,8 +1,14 @@
 package app.Facade;
 
+import app.model.DBConnection;
+import app.view.ListBox;
+
 public class QueryFacadeV1 extends DefaultQueryFacade
 {
-
+	public QueryFacadeV1()
+	{
+		super();
+	}
 	@Override
 	public void query1(String publisherFilter) {
 		/* TODO: insert query 1 logic here */

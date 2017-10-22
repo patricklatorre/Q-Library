@@ -20,7 +20,7 @@ public class SuperController
 	}
 
 	public void start() {
-		FXMLLoader loader;
+		FXMLLoader loader = new FXMLLoader();
 
 		/*
 		* APP WINDOW SETUP

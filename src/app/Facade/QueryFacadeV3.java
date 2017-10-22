@@ -2,7 +2,10 @@ package app.Facade;
 
 public class QueryFacadeV3 extends DefaultQueryFacade
 {
-
+	public QueryFacadeV3()
+	{
+		super();
+	}
 	@Override
 	public void query1(String publisherFilter) {
 		/* TODO: insert query 1 logic here */
