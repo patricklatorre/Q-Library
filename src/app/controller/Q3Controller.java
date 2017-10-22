@@ -39,6 +39,7 @@ public class Q3Controller {
 		assert firstField != null : "fx:id=\"firstField\" was not injected: check your FXML file 'Q3Screen.fxml'.";
 		assert lastField != null : "fx:id=\"lastField\" was not injected: check your FXML file 'Q3Screen.fxml'.";
 
+		resetBtn.setOnAction(e -> clear());
 	}
 
 	public AnchorPane getScreen() {
@@ -79,5 +80,10 @@ public class Q3Controller {
 
 	public void setLastField(JFXTextField lastField) {
 		this.lastField = lastField;
+	}
+
+	public void clear() {
+		firstField.setText("");
+		lastField.setText("");
 	}
 }

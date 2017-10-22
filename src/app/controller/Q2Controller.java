@@ -40,6 +40,7 @@ public class Q2Controller {
 		assert startDate != null : "fx:id=\"startDate\" was not injected: check your FXML file 'Q2Screen.fxml'.";
 		assert endDate != null : "fx:id=\"endDate\" was not injected: check your FXML file 'Q2Screen.fxml'.";
 
+		resetBtn.setOnAction(e -> clear());
 	}
 
 	public AnchorPane getScreen() {
@@ -80,5 +81,10 @@ public class Q2Controller {
 
 	public void setEndDate(JFXDatePicker endDate) {
 		this.endDate = endDate;
+	}
+
+	public void clear() {
+		startDate.setValue(null);
+		endDate.setValue(null);
 	}
 }

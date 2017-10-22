@@ -35,6 +35,8 @@ public class Q1Controller {
 		assert resetBtn != null : "fx:id=\"resetBtn\" was not injected: check your FXML file 'Q1Screen.fxml'.";
 		assert startBtn != null : "fx:id=\"startBtn\" was not injected: check your FXML file 'Q1Screen.fxml'.";
 		assert publisherField != null : "fx:id=\"publisherField\" was not injected: check your FXML file 'Q1Screen.fxml'.";
+
+		resetBtn.setOnAction(e -> clear());
 	}
 
 	public AnchorPane getScreen() {
@@ -67,5 +69,9 @@ public class Q1Controller {
 
 	public void setPublisherField(JFXTextField publisherField) {
 		this.publisherField = publisherField;
+	}
+
+	public void clear() {
+		publisherField.setText("");
 	}
 }
