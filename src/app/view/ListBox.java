@@ -14,13 +14,13 @@ import java.util.List;
 
 public class ListBox
 {
-	public static void display(List<String> listOfStrings){
+	public static void display(List<String> listOfStrings, List<String> header){
 
 		FXMLLoader loader = new FXMLLoader();
 		Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL); // Blocks interaction with parent windows
-        window.setMinWidth(1000);
-        window.setMinHeight(916);
+       // window.initModality(Modality.APPLICATION_MODAL); // Blocks interaction with parent windows
+        window.setMinWidth(1200);
+        window.setMinHeight(850);
 
 		loader = new FXMLLoader(ListBox.class.getResource("ListBox.fxml"));
 		Parent layout = null;
@@ -29,7 +29,16 @@ public class ListBox
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		ListBoxController listBoxController = (ListBoxController) loader.getController();
+		ListBoxController listBoxController = loader.getController();
+
+		String listHeaderText = "";
+		for (int i = 0; i < header.size(); i++) {
+			if( i > 0 )
+				listHeaderText += " - ";
+			listHeaderText += header.get(i);
+		}
+
+		listBoxController.getHeader().setText(listHeaderText);
 
 		JFXListView list = listBoxController.getList();
 		ObservableList<String> setList = FXCollections.observableArrayList(listOfStrings);

@@ -70,6 +70,7 @@ public class SuperController
 
 
 
+
 		/*
 		* Center Layout
 		* Query 1
@@ -197,6 +198,11 @@ public class SuperController
 		/*
 		* SCREEN NAVIGATION
 		* */
+		startController.getStartBtn().setOnAction(e -> {
+			window.setScene(queryScreen);
+			window.setFullScreen(true);
+		});
+
 		queryController.getOutline().setCenter(q1Layout);
 
 
@@ -255,10 +261,6 @@ public class SuperController
 		/*
 		* NON-NAVIGATION ACTION LISTENERS
 		* */
-		startController.getStartBtn().setOnAction(e -> {
-			window.setScene(queryScreen);
-		});
-
 
 		q1Controller.getStartBtn().setOnAction(e -> {
 			String publisherFilter = q1Controller.getPublisherField().getText(); // String inside textfield

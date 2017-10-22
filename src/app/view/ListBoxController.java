@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXListView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 public class ListBoxController {
@@ -19,6 +20,9 @@ public class ListBoxController {
 
 	@FXML
 	private JFXListView<?> list;
+
+	@FXML
+	private Label header;
 
 	@FXML
 	void initialize() {
@@ -41,5 +45,13 @@ public class ListBoxController {
 
 	public void setList(JFXListView<?> list) {
 		this.list = list;
+	}
+
+	public Label getHeader() {
+		return header;
+	}
+
+	public void setHeader(Label header) {
+		this.header = header;
 	}
 }

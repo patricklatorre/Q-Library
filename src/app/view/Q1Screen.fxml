@@ -45,6 +45,6 @@
       </AnchorPane>
    </children>
    <effect>
-      <InnerShadow blurType="GAUSSIAN" color="#00000021" height="0.0" offsetX="10.0" radius="6.9125" width="29.65" />
+      <InnerShadow blurType="GAUSSIAN" color="TRANSPARENT" height="14.83" offsetX="10.0" radius="10.62" width="29.65" />
    </effect>
 </AnchorPane>

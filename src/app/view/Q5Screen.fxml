@@ -6,7 +6,8 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
 <AnchorPane fx:id="screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1007.0" style="-fx-background-color: #009688;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.Q5Controller">
    <children>
       <AnchorPane layoutX="70.0" layoutY="70.0" prefHeight="579.0" prefWidth="861.0" style="-fx-background-color: white; -fx-background-radius: 2;">
@@ -43,6 +44,6 @@
       </AnchorPane>
    </children>
    <effect>
-      <InnerShadow blurType="GAUSSIAN" color="#00000021" height="0.0" offsetX="10.0" radius="6.9125" width="29.65" />
+      <InnerShadow blurType="GAUSSIAN" color="TRANSPARENT" height="14.83" offsetX="10.0" radius="10.62" width="29.65" />
    </effect>
 </AnchorPane>

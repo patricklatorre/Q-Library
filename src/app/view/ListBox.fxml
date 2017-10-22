@@ -6,21 +6,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="916.0" prefWidth="1000.0" style="-fx-background-color: #009688;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.ListBoxController">
+<AnchorPane fx:id="screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1200.0" style="-fx-background-color: #009688;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.ListBoxController">
    <children>
-      <Label layoutX="100.0" layoutY="70.0" text="Results" textFill="WHITE">
+      <Label layoutX="103.0" layoutY="40.0" text="Results" textFill="WHITE">
          <font>
             <Font name="Roboto Condensed Bold" size="54.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="100.0" layoutY="150.0" prefHeight="700.0" prefWidth="800.0">
+      <AnchorPane layoutX="100.0" layoutY="176.0" prefHeight="594.0" prefWidth="1000.0">
          <children>
-            <JFXListView fx:id="list" prefHeight="700.0" prefWidth="800.0" />
+            <JFXListView fx:id="list" prefHeight="620.0" prefWidth="1000.0" />
          </children>
          <effect>
             <DropShadow color="#00000080" height="50.0" offsetY="10.0" radius="24.5" width="50.0" />
          </effect>
       </AnchorPane>
+      <Label fx:id="header" layoutX="107.0" layoutY="137.0" opacity="0.5" text="header" textFill="WHITE">
+         <font>
+            <Font name="Roboto Condensed Regular" size="27.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
