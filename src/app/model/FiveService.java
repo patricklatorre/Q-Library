@@ -28,7 +28,7 @@ public class FiveService
             String query =  "SELECT bl.CardNo, CONCAT(b.BorrowerFName, \" \", b.BorrowerLName) AS Borrower, COUNT(bl.BookID) AS 'NoBkBor' " +
                             "FROM book_loans bl, borrower b, (SELECT CardNo, COUNT(BookID) AS 'cnt' FROM book_loans GROUP BY CardNo) a " +
                             "WHERE bl.CardNo = b.CardNo AND b.CardNo = a.CardNo AND " +
-                            "a.cnt >= (SELECT MAX(b.cnt)\tFROM (SELECT CardNo, COUNT(BookID) AS 'cnt' FROM book_loans GROUP BY CardNo) b) " +
+                            "a.cnt >= (SELECT MAX(c.cnt2) FROM (SELECT CardNo, COUNT(BookID) AS 'cnt2' FROM book_loans GROUP BY CardNo) c) " +
                             "GROUP BY bl.CardNo " +
                             "ORDER BY 2 ASC;";
             Statement statement = connection.getConnection().createStatement();
