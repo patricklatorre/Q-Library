@@ -3,6 +3,9 @@ package app.Facade;
 import app.model.DBConnection;
 import app.view.ListBox;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class QueryFacadeV1 extends DefaultQueryFacade
 {
 	public QueryFacadeV1()
@@ -11,47 +14,27 @@ public class QueryFacadeV1 extends DefaultQueryFacade
 	}
 	@Override
 	public void query1(String publisherFilter) {
-		/* TODO: insert query 1 logic here */
-		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
-		/* 1 row = 1 string
-		*  I suggest using tabs (\t) to separate columns para pantay pantay
-		* */
+		ListBox.display(service1.getQuery(publisherFilter));
 	}
 
 	@Override
 	public void query2(String startDate, String endDate) {
-		/* TODO: insert query 2 logic here */
-		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
-		/* 1 row = 1 string
-		*  I suggest using tabs (\t) to separate columns para pantay pantay
-		* */
+		ListBox.display(service2.getQuery(startDate, endDate));
 	}
 
 	@Override
-	public void query3(String authorFilter) {
-		/* TODO: insert query 3 logic here */
-		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
-		/* 1 row = 1 string
-		*  I suggest using tabs (\t) to separate columns para pantay pantay
-		* */
+	public void query3(String firstName, String lastName) {
+		ListBox.display(service3.getQuery(firstName, lastName));
 	}
 
 	@Override
 	public void query4() {
-		/* TODO: insert query 4 logic here */
-		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
-		/* 1 row = 1 string
-		*  I suggest using tabs (\t) to separate columns para pantay pantay
-		* */
+		ListBox.display(service4.getQuery());
 	}
 
 	@Override
 	public void query5() {
-		/* TODO: insert query 5 logic here */
-		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
-		/* 1 row = 1 string
-		*  I suggest using tabs (\t) to separate columns para pantay pantay
-		* */
+		ListBox.display(service5.getQuery());
 	}
 
 	@Override
@@ -65,11 +48,7 @@ public class QueryFacadeV1 extends DefaultQueryFacade
 
 	@Override
 	public void query7() {
-		/* TODO: insert query 7 logic here */
-		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
-		/* 1 row = 1 string
-		*  I suggest using tabs (\t) to separate columns para pantay pantay
-		* */
+		ListBox.display(service7.getQuery());
 	}
 
 	@Override

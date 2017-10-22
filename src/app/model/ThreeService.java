@@ -20,7 +20,7 @@ public class ThreeService
     }
 
     //Query 3 = books by Author (Last Name)
-    public ArrayList<String> getQuery(String name)
+    public ArrayList<String> getQuery(String firstname, String lastname)
     {
         ArrayList<String> books = new ArrayList<String>();
 
@@ -30,7 +30,10 @@ public class ThreeService
                             " WHERE bk.BookID = ba.BookID AND " +
                                 "ba.AuthorLastName IN (SELECT AuthorLastName " +
                                                     "FROM book_authors " +
-                                                    "WHERE AuthorLastName = '" + name + "')" +
+                                                    "WHERE AuthorLastName = '" +lastname+ "') AND " +
+                                "ba.AuthorFirstName IN (SELECT AuthorFirstName " +
+                                                    "FROM book_authors " +
+                                                    "WHERE AuthorFirstName = '" +firstname+ "')" +
                             " ORDER BY bk.Title ASC;";
             Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);

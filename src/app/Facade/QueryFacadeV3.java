@@ -25,7 +25,7 @@ public class QueryFacadeV3 extends DefaultQueryFacade
 	}
 
 	@Override
-	public void query3(String authorFilter) {
+	public void query3(String firstName, String lastName) {
 		/* TODO: insert query 3 logic here */
 		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
 		/* 1 row = 1 string

@@ -7,7 +7,8 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
 <AnchorPane fx:id="screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1007.0" style="-fx-background-color: #009688;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.Q3Controller">
    <children>
       <AnchorPane layoutX="70.0" layoutY="70.0" prefHeight="579.0" prefWidth="861.0" style="-fx-background-color: white; -fx-background-radius: 2;">
@@ -35,7 +36,12 @@
                   <Font name="Roboto Condensed Light" size="14.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="authorField" alignment="TOP_LEFT" focusColor="BLACK" labelFloat="true" layoutX="240.0" layoutY="251.0" prefHeight="25.0" prefWidth="392.0" promptText="Author">
+            <JFXTextField fx:id="firstField" alignment="TOP_LEFT" focusColor="BLACK" labelFloat="true" layoutX="238.0" layoutY="234.0" prefHeight="25.0" prefWidth="392.0" promptText="First name">
+               <font>
+                  <Font name="Roboto Mono Light" size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="lastField" alignment="TOP_LEFT" focusColor="BLACK" labelFloat="true" layoutX="238.0" layoutY="302.0" prefHeight="25.0" prefWidth="392.0" promptText="Last name">
                <font>
                   <Font name="Roboto Mono Light" size="20.0" />
                </font>

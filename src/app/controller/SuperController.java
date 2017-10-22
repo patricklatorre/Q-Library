@@ -281,9 +281,10 @@ public class SuperController
 
 
 		q3Controller.getStartBtn().setOnAction(e -> {
-			String authorFilter = q3Controller.getAuthorField().getText();		// String inside textfield
+			String firstFilter = q3Controller.getFirstField().getText();		// String inside textfield
+			String lastFilter = q3Controller.getLastField().getText();		// String inside textfield
 
-			this.queryMaster.query3(authorFilter);
+			this.queryMaster.query3(firstFilter, lastFilter);
 		});
 
 
