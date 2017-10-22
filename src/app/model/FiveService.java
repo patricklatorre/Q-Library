@@ -25,18 +25,18 @@ public class FiveService
         ArrayList<String> books = new ArrayList<String>();
 
         try {
-            String query =  "SELECT bl.CardNo, b.BorrowerName, COUNT(bl.BookID) AS 'NoBkBor' " +
-                            "FROM book_loans bl, borrower b, (SELECT CardNo, COUNT(BookID) AS 'cnt FROM book_loans GROUP BY CardNo) a " +
+            String query =  "SELECT bl.CardNo, CONCAT(b.BorrowerFName, \" \", b.BorrowerLName) AS Borrower, COUNT(bl.BookID) AS 'NoBkBor' " +
+                            "FROM book_loans bl, borrower b, (SELECT CardNo, COUNT(BookID) AS 'cnt' FROM book_loans GROUP BY CardNo) a " +
                             "WHERE bl.CardNo = b.CardNo AND b.CardNo = a.CardNo AND " +
                             "a.cnt >= (SELECT MAX(b.cnt)\tFROM (SELECT CardNo, COUNT(BookID) AS 'cnt' FROM book_loans GROUP BY CardNo) b) " +
                             "GROUP BY bl.CardNo " +
-                            "ORDER BY b.BorrowerName ASC;";
-            Statement statement = connect.getConnection().createStatement();
+                            "ORDER BY 2 ASC;";
+            Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 books.add(toBooks(rs));
             }
-            return sellers;
+            return books;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -45,7 +45,7 @@ public class FiveService
 
     private String toBooks(ResultSet rs) throws SQLException
     {
-        return "" + rs.getString("CardNo") + "\t" + rs.getString("BorrowerName")
+        return "" + rs.getString("CardNo") + "\t" + rs.getString("Borrower")
                 + "\t" + rs.getString("NoBkBor");
     }
 }

@@ -29,12 +29,12 @@ public class TwoService
                             " FROM book_loans" +
                             " WHERE DateOut BETWEEN '" + start + "' AND '" + end + "' " +
                             " ORDER BY 1 ASC, 2 ASC, 3 ASC;";
-            Statement statement = connect.getConnection().createStatement();
+            Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 books.add(toBooks(rs));
             }
-            return sellers;
+            return books;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

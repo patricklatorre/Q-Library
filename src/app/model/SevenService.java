@@ -41,12 +41,12 @@ public class SevenService
                                                     "GROUP BY 1) " +
                                             "WHERE bl1.BranchID AND NoTimesLoaned = MAXLOAN) " +
                             "ORDER BY 2, 5;";
-            Statement statement = connect.getConnection().createStatement();
+            Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 books.add(toBooks(rs));
             }
-            return sellers;
+            return books;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

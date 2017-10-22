@@ -25,19 +25,19 @@ public class ThreeService
         ArrayList<String> books = new ArrayList<String>();
 
         try {
-            String query =  "SELECT bk.Title, bk.PublisherName, CONCAT(ba.AuthorLastName, \" \", ba.AuthorFirstName) AS Author" +
+            String query =  "SELECT bk.Title, bk.PublisherName, CONCAT(ba.AuthorFirstName, \" \", ba.AuthorLastName) AS Author" +
                             " FROM book bk, book_authors ba" +
                             " WHERE bk.BookID = ba.BookID AND " +
                                 "ba.AuthorLastName IN (SELECT AuthorLastName " +
                                                     "FROM book_authors " +
                                                     "WHERE AuthorLastName = '" + name + "')" +
                             " ORDER BY bk.Title ASC;";
-            Statement statement = connect.getConnection().createStatement();
+            Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 books.add(toBooks(rs));
             }
-            return sellers;
+            return books;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

@@ -25,17 +25,17 @@ public class FourService
         ArrayList<String> books = new ArrayList<String>();
 
         try {
-            String query =  "SELECT b.BookID, b.Title, ba.Author, b.PublisherName " +
+            String query =  "SELECT b.BookID, b.Title, CONCAT(ba.AuthorFirstName, \" \", ba.AuthorLastName) AS Author, b.PublisherName " +
                             "FROM book b, book_authors ba " +
                             "WHERE b.BookID = ba.BookID " +
                             "AND b.BookID NOT IN (SELECT DISTINCT BookID FROM book_loans) " +
                             "ORDER BY 3 ASC, 2 ASC;";
-            Statement statement = connect.getConnection().createStatement();
+            Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 books.add(toBooks(rs));
             }
-            return sellers;
+            return books;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

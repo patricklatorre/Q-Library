@@ -29,12 +29,12 @@ public class OneService
                             "FROM book " +
                             "WHERE PublisherName = '" + publisher +
                             "' ORDER BY 1;";
-            Statement statement = connect.getConnection().createStatement();
+            Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 books.add(toBooks(rs));
             }
-            return sellers;
+            return books;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
