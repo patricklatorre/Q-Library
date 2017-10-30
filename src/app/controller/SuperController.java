@@ -301,7 +301,8 @@ public class SuperController
 
 
 		q6Controller.getStartBtn().setOnAction(e -> {
-			this.queryMaster.query6("BBC Books");
+			String branchFilter = q6Controller.getBranchField().getText();
+			this.queryMaster.query6(branchFilter);
 		});
 
 
