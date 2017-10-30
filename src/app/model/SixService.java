@@ -25,10 +25,10 @@ public class SixService
         ArrayList<String> books = new ArrayList<String>();
 
         try {
-            String query =  "SELECT Title\n" +
-                            "FROM book\n" +
-                            "WHERE BookID NOT IN (SELECT DISTINCT BookID\n" +
-                                            "FROM book_loans bl, library_branch lb\n" +
+            String query =  "SELECT Title " +
+                            "FROM book " +
+                            "WHERE BookID NOT IN (SELECT DISTINCT BookID " +
+                                            "FROM book_loans bl, library_branch lb " +
                                             "WHERE bl.branchID = lb.branchID AND lb.BranchName = '" + branch + "'";
             Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);

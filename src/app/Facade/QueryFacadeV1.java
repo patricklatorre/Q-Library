@@ -59,12 +59,10 @@ public class QueryFacadeV1 extends DefaultQueryFacade
 	}
 
 	@Override
-	public void query6() {
-		/* TODO: insert query 6 logic here */
-		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
-		/* 1 row = 1 string
-		*  I suggest using tabs (\t) to separate columns para pantay pantay
-		* */
+	public void query6(String branch) {
+		List<String> header = new ArrayList<>();
+		header.add("Title");
+		ListBox.display(service6.getQuery(branch), header);
 	}
 
 	@Override
@@ -82,11 +80,13 @@ public class QueryFacadeV1 extends DefaultQueryFacade
 	}
 
 	@Override
-	public void query8() {
-		/* TODO: insert query 8 logic here */
-		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
-		/* 1 row = 1 string
-		*  I suggest using tabs (\t) to separate columns para pantay pantay
-		* */
+	public void query8(String book) {
+		List<String> header = new ArrayList<>();
+		header.add("Title");
+		header.add("BranchName");
+		header.add("Borrower");
+		header.add("DateOut");
+		header.add("DueDate");
+		ListBox.display(service8.getQuery(book), header);
 	}
 }

@@ -52,7 +52,7 @@ public class QueryFacadeV3 extends DefaultQueryFacade
 	}
 
 	@Override
-	public void query6() {
+	public void query6(String branch) {
 		/* TODO: insert query 6 logic here */
 		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
 		/* 1 row = 1 string
@@ -70,7 +70,7 @@ public class QueryFacadeV3 extends DefaultQueryFacade
 	}
 
 	@Override
-	public void query8() {
+	public void query8(String book) {
 		/* TODO: insert query 8 logic here */
 		/* TODO: call static method ListBox.display() to display results, accepts arraylist of strings */
 		/* 1 row = 1 string

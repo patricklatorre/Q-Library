@@ -301,7 +301,7 @@ public class SuperController
 
 
 		q6Controller.getStartBtn().setOnAction(e -> {
-			this.queryMaster.query6();
+			this.queryMaster.query6("BBC Books");
 		});
 
 
@@ -311,7 +311,7 @@ public class SuperController
 
 
 		q8Controller.getStartBtn().setOnAction(e -> {
-			this.queryMaster.query8();
+			this.queryMaster.query8("default");
 		});
 
 
