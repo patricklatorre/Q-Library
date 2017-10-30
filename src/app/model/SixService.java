@@ -29,7 +29,7 @@ public class SixService
                             "FROM book " +
                             "WHERE BookID NOT IN (SELECT DISTINCT BookID " +
                                             "FROM book_loans bl, library_branch lb " +
-                                            "WHERE bl.branchID = lb.branchID AND lb.BranchName = '" + branch + "'";
+                                            "WHERE bl.branchID = lb.branchID AND lb.BranchName = '" + branch + "');";
             Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
