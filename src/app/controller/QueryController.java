@@ -2,6 +2,7 @@ package app.controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.layout.BorderPane;
 
 import java.net.URL;
@@ -57,6 +58,15 @@ public class QueryController {
 		assert q7btn != null : "fx:id=\"q7btn\" was not injected: check your FXML file 'QueryScreen.fxml'.";
 		assert q8btn != null : "fx:id=\"q8btn\" was not injected: check your FXML file 'QueryScreen.fxml'.";
 		assert q9btn != null : "fx:id=\"q9btn\" was not injected: check your FXML file 'QueryScreen.fxml'.";
+
+		q1btn.setAlignment(Pos.BASELINE_LEFT);
+		q2btn.setAlignment(Pos.BASELINE_LEFT);
+		q3btn.setAlignment(Pos.BASELINE_LEFT);
+		q4btn.setAlignment(Pos.BASELINE_LEFT);
+		q5btn.setAlignment(Pos.BASELINE_LEFT);
+		q6btn.setAlignment(Pos.BASELINE_LEFT);
+		q7btn.setAlignment(Pos.BASELINE_LEFT);
+		q8btn.setAlignment(Pos.BASELINE_LEFT);
 	}
 
 	public BorderPane getOutline() {

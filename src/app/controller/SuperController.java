@@ -312,7 +312,8 @@ public class SuperController
 
 
 		q8Controller.getStartBtn().setOnAction(e -> {
-			this.queryMaster.query8("default");
+			String titleFilter = q8Controller.getTitleField().getText();
+			this.queryMaster.query8(titleFilter);
 		});
 
 

@@ -35,6 +35,7 @@ public class Q6Controller {
 		assert startBtn != null : "fx:id=\"startBtn\" was not injected: check your FXML file 'Q6Screen.fxml'.";
 		assert branchField != null : "fx:id=\"branchField\" was not injected: check your FXML file 'Q6Screen.fxml'.";
 
+		resetBtn.setOnAction(e -> clear());
 	}
 
 	public AnchorPane getScreen() {
@@ -67,5 +68,9 @@ public class Q6Controller {
 
 	public void setBranchField(JFXTextField branchField) {
 		this.branchField = branchField;
+	}
+
+	public void clear() {
+		branchField.setText("");
 	}
 }

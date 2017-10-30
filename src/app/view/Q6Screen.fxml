@@ -31,7 +31,7 @@
                   <Font name="Roboto Condensed Bold" size="54.0" />
                </font>
             </Label>
-            <Label layoutX="238.0" layoutY="82.0" text="( List books from a publisher )" textFill="#8c8c8c">
+            <Label layoutX="238.0" layoutY="82.0" text="( List books that were never borrowed from a branch )" textFill="#8c8c8c">
                <font>
                   <Font name="Roboto Condensed Light" size="14.0" />
                </font>
