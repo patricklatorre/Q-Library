@@ -25,22 +25,22 @@ public class SevenService
         ArrayList<String> books = new ArrayList<String>();
 
         try {
-            String query =  "SELECT bl1.BranchID, lb.BranchName, bl1.BookID, NoTimesLoaned, Title, CONCAT(ba.AuthorLastName, \" \", ba.AuthorFirstName) " +
-                                "AS Author, b.PublisherName, Address AS PublisherAddress " +
-                            "FROM (SELECT bl1.BranchID, lb.BranchName, bl1.BookID, Title, CONCAT(ba.AuthorLastName, \" \", ba.AuthorFirstName) AS Author, " +
-                                        "COUNT(*) AS NoTimesLoaned, b.PublisherName, Address " +
-                                        "FROM book_loans bl1, book b, book_authors ba, publisher p, library_branch lb " +
-                                        "WHERE bl1.bookID = b.bookID AND bl1.BookID = ba.BookID AND b.PublisherName = p.PublisherName " +
-                                            "AND \tbl1.BranchID = lb.BranchID " +
-                                        "GROUP BY 1, 2, 3, 4, 5, 7, 8) AS tbl " +
-                            "WHERE EXISTS (SELECT bl2.BranchID, MAXLOAN " +
-                                            "FROM (SELECT bl2.BranchID, MAX(LoanCnt2) AS MAXLOAN " +
-                                                    "FROM (SELECT bl2.BranchID, bl2.BookID, COUNT(*) AS LoanCnt2 " +
-                                                            "FROM book_loans bl2 " +
-                                                            "GROUP BY 1, 2) " +
-                                                    "GROUP BY 1) " +
-                                            "WHERE bl1.BranchID AND NoTimesLoaned = MAXLOAN) " +
-                            "ORDER BY 2, 5;";
+            String query =  "SELECT DISTINCT LB.BranchID, LB.BranchName, Table3.BookID, NoTimesLoaned, B.Title, " +
+                                "CONCAT(BA.AuthorFirstName, ' ', BA.AuthorLastName) AS Author, P.PublisherName, " +
+                                "P.Address AS PublisherAddress " +
+                            "FROM book B, library_branch LB, publisher P, " +
+                                "book_authors BA, (SELECT MAX(NoOfLoanPerBookPerBranch) AS NoTimesLoaned, Table1.BranchID " +
+                                                "FROM (SELECT COUNT(BookID) AS NoOfLoanPerBookPerBranch, BL.BookID, BL.BranchID " +
+                                                        "FROM book_loans BL " +
+                                                        "GROUP BY BL.BranchID, BL.BookID) Table1 " +
+                                                "GROUP BY Table1.BranchID) Table2 " +
+                                        "INNER JOIN (SELECT COUNT(BookID) AS Count, BL.BookID, BL.BranchID " +
+                                                    "FROM book_loans BL " +
+                                                    "GROUP BY BL.BranchID, BL.BookID) Table3 ON NoTimesLoaned = Table3.Count " +
+                            "WHERE BA.BookID = Table3.BookID AND B.BookID = Table3.BookID " +
+                                "AND B.PublisherName = P.PublisherName AND LB.BranchID = Table2.BranchID " +
+                            "GROUP BY 1" +
+                            "ORDER BY 1, 5;";
             Statement statement = connection.getConnection().createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
